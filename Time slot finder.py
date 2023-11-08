@@ -19,13 +19,13 @@ def get_free_times():
     return free_times
 
 def suggest_meeting_times(free_times):
-    # Find the intersection of all available time slots
+   
     common_start = max(time[1] for time in free_times)
     common_end = min(time[2] for time in free_times)
     if common_start >= common_end:
         return None
     
-    # Generate a list of suggested meeting times
+ 
     suggested_times = []
     current_time = common_start
     while current_time <= common_end:
@@ -43,7 +43,7 @@ def recommend_time(suggested_times):
     else:
         return None
 
-# Example usage
+
 free_times = get_free_times()
 suggested_times = suggest_meeting_times(free_times)
 
